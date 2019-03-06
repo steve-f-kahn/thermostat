@@ -41,3 +41,8 @@ As a homeowner
 So that I can be environmentally-friendly
 I want a mode that sets the maximum to 25 degrees
 ```
+```
+As a homeowner
+So that I can live in a sauna
+I want a mode that sets the maximum to 32 degrees
+```
