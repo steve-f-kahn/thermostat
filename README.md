@@ -16,15 +16,23 @@
 * (In the challenges where we add an interface, low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.)
 
 ## User Stories
-
+```
 As a homeowner
 So that I live comfortably
 I would like my thermostat to start at 20 degrees
-
+```
+```
 As a homeowner
 So that I can wear shorts
 I would like to increase the temperature
-
+```
+```
 As a homeowner
 So that I can be cheap
 I would like to decrease the temperature
+```
+```
+As a homeowner
+So that it doesn't get too cold
+I want the minimum temperature to be 10 degrees
+```
