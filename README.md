@@ -17,6 +17,14 @@
 
 ## User Stories
 
-As a homowner
+As a homeowner
 So that I live comfortably
 I would like my thermostat to start at 20 degrees
+
+As a homeowner
+So that I can wear shorts
+I would like to increase the temperature
+
+As a homeowner
+So that I can be cheap
+I would like to decrease the temperature
