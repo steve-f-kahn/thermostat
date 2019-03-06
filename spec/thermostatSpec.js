@@ -27,4 +27,10 @@ describe('Thermostat', function() {
     thermostat.down(10);
     expect(thermostat.temp).toEqual(10);
   });
+
+  it("can't lower the temperature below 10 degrees", function() {
+    thermostat.down(11);
+    expect(thermostat.temp).toEqual(10);
+  });
+
 });
