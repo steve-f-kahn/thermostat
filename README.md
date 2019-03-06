@@ -36,3 +36,8 @@ As a homeowner
 So that it doesn't get too cold
 I want the minimum temperature to be 10 degrees
 ```
+```
+As a homeowner
+So that I can be environmentally-friendly
+I want a mode that sets the maximum to 25 degrees
+```
