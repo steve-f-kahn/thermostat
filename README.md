@@ -46,3 +46,13 @@ As a homeowner
 So that I can live in a sauna
 I want a mode that sets the maximum to 32 degrees
 ```
+```
+As a homeowner
+So that I don't have to think about saving the planet
+I want to save power by default
+```
+```
+As a homeowner
+So that I can go back to normal
+I want to be able to reset my thermostat
+```
