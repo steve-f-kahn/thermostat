@@ -1,13 +1,68 @@
 .page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
+
 }
 
-.temp {
+.templow {
+
   background-color: #338984;
   border-radius: 50%;
   width: 300px;
   height: 300px;
+}
+
+.tempmed {
+  background-color: #fbae00;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.temphigh {
+  background-color: #da5353;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.tempnum {
+    font-size: 100px;
+    color: white;
+    font-family: "Trebuchet MS";
+
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  box-sizing: border-box;
+  height: 10vw;
+  width: 10vw;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 3px 3px 0px;
+  transition: border-width 150ms ease-in-out;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.down {
+  transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+}
+
+.arrow:hover {
+  border-bottom-width: 6px;
+  border-right-width: 6px;
+}
+
+.arrowbuttons {
+
 }
