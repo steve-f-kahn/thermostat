@@ -48,11 +48,25 @@ describe('Thermostat', function() {
     thermostat.up(3);
     thermostat.reset();
     expect(thermostat.temp).toEqual(20);
-  })
+  });
 
   it('Can reset the mode to be on', function() {
     thermostat.togglePowerSavingMode()
     thermostat.reset()
     expect(thermostat.powerSavingMode).toEqual(true)
+  });
+
+  it('Says your using low energy when temp is 18 or below', function(){
+    thermostat.down(3);
+    expect(thermostat.energyUse()).toEqual("Low Energy");
+  });
+
+  it('Says your using low energy when temp is 18 or below', function(){
+    expect(thermostat.energyUse()).toEqual("Medium Energy");
+  });
+
+  it('Says your using low energy when temp is 18 or below', function(){
+    thermostat.up(5);
+    expect(thermostat.energyUse()).toEqual("High Energy");
   });
 });

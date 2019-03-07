@@ -56,3 +56,8 @@ As a homeowner
 So that I can go back to normal
 I want to be able to reset my thermostat
 ```
+```
+As a homeowner
+SO that I know how much energy I am using
+I want to have a read out of my current energy usage (low, medium, high)
+```
