@@ -3,17 +3,18 @@
 </head>
 
 <body>
-  <div class="page center-flex">
-    <div class="">
-      <button class="reset-button"type="button" id="reset">RESET</button>
-    </div>
-    <div class="arrowbuttons">
-      <a data-scroll href="#full">
-        <div class="arrow up" id = "tempUp"></div>
-      </a>
-      <a data-scroll href="#full">
-        <div class="arrow down" id = "tempDown"></div>
-      </a>
+  <div class = "center-flex row">
+    <div class="page center-flex">
+      <div class="">
+        <button class="reset-button"type="button" id="reset">RESET</button>
+      </div>
+      <div class="arrowbuttons">
+        <a data-scroll href="#full">
+          <div class="arrow up" id = "tempUp"></div>
+        </a>
+        <a data-scroll href="#full">
+          <div class="arrow down" id = "tempDown"></div>
+        </a>
     </div>
     <div id="tempCircle"class="tempmed center-flex temp">
       <div id="tempNum" class="tempnum">20°C</div>
@@ -26,6 +27,9 @@
       <input type="range" min="1" max="2" value="1" class="power-mode on" id="myMode">
     </div>
   </div>
+  </div>
+  <div id="weather" class = "weather center-flex"></div>
+  <div id="degrees" class = "degrees center-flex"></div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="src/thermostat.js">
 
@@ -35,6 +39,13 @@
       thermostat = new Thermostat()
       setTemp()
     })
+
+    $.get("http://api.openweathermap.org/data/2.5/weather?q=London&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric", function(resp){
+      $("#weather").html(resp.weather[0].main);
+      $("#degrees").html(resp.main.temp);
+      $( "#degrees" ).append( "°C" );
+    })
+
     $("#tempUp").click(function() {
       thermostat.up(1)
       setTemp()
