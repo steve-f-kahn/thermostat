@@ -17,7 +17,15 @@ Thermostat.prototype.down = function (num) {
 };
 
 Thermostat.prototype.togglePowerSavingMode = function () {
-  this.powerSavingMode ? this.powerSavingMode = false : this.powerSavingMode = true
+  if (this.powerSavingMode) {
+    this.powerSavingMode = false
+  } else {
+    this.powerSavingMode = true
+    if(this.temp > 25) {
+      this.temp = 25
+    }
+  }
+
 };
 
 Thermostat.prototype.reset = function () {
