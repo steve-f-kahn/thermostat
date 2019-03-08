@@ -1,5 +1,5 @@
 .page {
-  height: 80%;
+  height: 79%;
 }
 
 .temp {
@@ -115,13 +115,24 @@
 }
 
 .weather {
-  height: 10%;
+  height: 7%;
   font-size: 5vw;
   font-family: "Trebuchet MS";
 }
 
 .degrees {
-  height: 10%;
+  height: 7%;
   font-size: 5vw;
   font-family: "Trebuchet MS";
+}
+
+.location {
+  height: 7%;
+  font-size: 5vw;
+  font-family: "Trebuchet MS";
+}
+
+.margin {
+  margin-left: 1%;
+  margin-right: 1%;
 }

@@ -28,8 +28,11 @@
     </div>
   </div>
   </div>
-  <div id="weather" class = "weather center-flex"></div>
-  <div id="degrees" class = "degrees center-flex"></div>
+  <div id="weatherApi" class = "center-flex">
+    <div id="location" class = "margin location degrees center-flex"></div>
+    <div id="weather" class = "margin weather center-flex"></div>
+    <div id="degrees" class = "margin degrees center-flex"></div>
+  </div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="src/thermostat.js">
 
@@ -41,7 +44,9 @@
     })
 
     $.get("http://api.openweathermap.org/data/2.5/weather?q=London&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric", function(resp){
+      $("#location").html(resp.name);
       $("#weather").html(resp.weather[0].main);
+      $("#icon").html(resp.weather[0].icon);
       $("#degrees").html(resp.main.temp);
       $( "#degrees" ).append( "°C" );
     })
