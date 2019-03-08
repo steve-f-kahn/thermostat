@@ -9,14 +9,14 @@
     </div>
     <div class="arrowbuttons">
       <a data-scroll href="#full">
-        <div class="arrow up"></div>
+        <div class="arrow up" id = "tempUp"></div>
       </a>
       <a data-scroll href="#full">
-        <div class="arrow down"></div>
+        <div class="arrow down" id = "tempDown"></div>
       </a>
     </div>
-    <div class="tempmed center-flex temp">
-      <div class="tempnum">20°C</div>
+    <div id="tempCircle"class="templow center-flex temp">
+      <div id="tempNum" class="tempnum">20°C</div>
     </div>
     <div class="power-mode-container">
       <div class="power-mode-labels">
@@ -26,4 +26,25 @@
       <input type="range" min="1" max="2" value="1" class="power-mode on" id="myRange">
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="src/thermostat.js">
+
+  </script>
+  <script>
+    $( document ).ready(function() {
+      thermostat = new Thermostat()
+      setTemp()
+    })
+    $("#tempUp").click(function() {
+      thermostat.up(1)
+      setTemp()
+    })
+    $("#tempDown").click(function() {
+      thermostat.down(1)
+      setTemp()
+    })
+    setTemp = function(){
+      $("#tempNum").text(thermostat.temp)
+    }
+  </script>
 </body>
