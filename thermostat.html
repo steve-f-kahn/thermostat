@@ -15,7 +15,7 @@
         <div class="arrow down" id = "tempDown"></div>
       </a>
     </div>
-    <div id="tempCircle"class="templow center-flex temp">
+    <div id="tempCircle"class="tempmed center-flex temp">
       <div id="tempNum" class="tempnum">20°C</div>
     </div>
     <div class="power-mode-container">
@@ -23,7 +23,7 @@
         <div class="power-mode-on">On</div>
         <div class="power-mode-off">Off</div>
       </div>
-      <input type="range" min="1" max="2" value="1" class="power-mode on" id="myRange">
+      <input type="range" min="1" max="2" value="1" class="power-mode on" id="myMode">
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -43,8 +43,37 @@
       thermostat.down(1)
       setTemp()
     })
+
+    $("#reset").click(function(){
+      thermostat.reset()
+      setTemp()
+    })
+
+    $("#myMode").change(function(){
+      if (thermostat.powerSavingMode == true) {
+        $("#myMode").removeClass().addClass("power-mode off")
+      } else {
+        $("#myMode").removeClass().addClass("power-mode on")
+      }
+      thermostat.togglePowerSavingMode()
+      setTemp()
+    })
+
     setTemp = function(){
-      $("#tempNum").text(thermostat.temp)
+      $("#tempNum").text(thermostat.temp + "°C")
+      setTempCircle()
     }
+
+    setTempCircle = function(){
+      if (thermostat.temp <= 18) {
+        $("#tempCircle").removeClass().addClass("templow center-flex temp")
+      } else if (thermostat.temp <= 24) {
+        $("#tempCircle").removeClass().addClass("tempmed center-flex temp")
+      } else {
+        $("#tempCircle").removeClass().addClass("temphigh center-flex temp")
+      }
+    }
+
+
   </script>
 </body>
